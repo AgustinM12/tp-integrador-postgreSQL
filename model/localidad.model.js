@@ -19,6 +19,10 @@ export const Localidad = sequelize.define('Localidad', {
     departamento_id:{
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+    nombre_depar:{
+        type: DataTypes.STRING,
+        allowNull: false
     }
 }, {
     timestamps: false,

@@ -22,3 +22,10 @@ export const Sector = sequelize.define('Sector', {
 Sector.sync({ force: false }).then(() => {
     console.log('Tabla de sector creada')
 })
+
+export async function sectorF() {
+    Sector.bulkCreate(
+        { sector_nombre: "Estatal", },
+        { sector_nombre: "Privado", },
+    )
+} 

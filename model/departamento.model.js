@@ -22,3 +22,17 @@ export const Departamento = sequelize.define('Departamento', {
 Departamento.sync({ force: false }).then(() => {
     console.log('Tabla de Departamento creada')
 })
+
+export async function departamentoF() {
+    Departamento.bulkCreate(
+        { id_departamento: 34007, departamento_nombre: "BERMEJO", },
+        { id_departamento: 34028, departamento_nombre: "MATACOS", },
+        { id_departamento: 34056, departamento_nombre: "PIRANE", },
+        { id_departamento: 34014, departamento_nombre: "FORMOSA", },
+        { id_departamento: 34049, departamento_nombre: "PILCOMAYO", },
+        { id_departamento: 34042, departamento_nombre: "PILAGAS", },
+        { id_departamento: 34021, departamento_nombre: "LAISHI", },
+        { id_departamento: 34063, departamento_nombre: "RAMON LISTA", },
+        { id_departamento: 34035, departamento_nombre: "PATIÑO", },
+    )
+}

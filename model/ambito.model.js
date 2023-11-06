@@ -22,3 +22,10 @@ export const Ambito = sequelize.define('Ambito', {
 Ambito.sync({ force: false }).then(() => {
     console.log('Tabla de Ambito creada')
 })
+
+export async function ambitoF() {
+    Ambito.bulkCreate(
+        { sector_nombre: "Rural", },
+        { sector_nombre: "Urbano", },
+    )
+} 

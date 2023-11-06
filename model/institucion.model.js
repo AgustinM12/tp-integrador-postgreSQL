@@ -19,23 +19,7 @@ export  const Institucion = sequelize.define('Institucion', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    domicilio_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    departamento_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    nivelEducativo_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
     sector_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    modalidad_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
@@ -58,3 +42,4 @@ export  const Institucion = sequelize.define('Institucion', {
 Institucion.sync({ force: false }).then(() => {
     console.log('Tabla de Institucion creada')
 })
+
