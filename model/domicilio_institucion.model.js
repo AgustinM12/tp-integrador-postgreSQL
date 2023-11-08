@@ -23,6 +23,6 @@ export const Domicilio_institucion = sequelize.define('Domicilio_institucion', {
 });
 
 // Sincronizar los modelos con la base de datos (esto creará las tablas si no existen)
-Domicilio_institucion.sync({ force: true }).then(() => {
+Domicilio_institucion.sync({ force: false }).then(() => {
     console.log('Tabla de Domicilio_institucion creada')
 })

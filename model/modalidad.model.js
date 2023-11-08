@@ -5,7 +5,7 @@ export const Modalidad = sequelize.define('Modalidad', {
     id_modalidad: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: false,
+        autoIncrement: true,
     },
     modalidad_nombre: {
         type: DataTypes.STRING,
@@ -19,6 +19,18 @@ export const Modalidad = sequelize.define('Modalidad', {
 });
 
 // Sincronizar los modelos con la base de datos (esto creará las tablas si no existen)
-Modalidad.sync({ force: false }).then(() => {
-    console.log('Tabla de Modalidad creada')
-})
+
+Modalidad.sync({ force: false })
+    .then(async () => {
+        const count = await Modalidad.count();
+        if (count === 0) {
+            {
+                await Modalidad.bulkCreate([
+                    { modalidad_nombre: "mod_comun", },
+                    { modalidad_nombre: "mod_especial", },
+                    { modalidad_nombre: "mod_adultos", },
+                ]);
+            }
+        }
+        console.log('Tabla de Modalidad creada')
+    });

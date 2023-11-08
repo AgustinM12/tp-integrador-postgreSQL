@@ -19,13 +19,16 @@ export const Ambito = sequelize.define('Ambito', {
 });
 
 // Sincronizar los modelos con la base de datos (esto creará las tablas si no existen)
-Ambito.sync({ force: false }).then(() => {
-    console.log('Tabla de Ambito creada')
-})
 
-export async function ambitoF() {
-    Ambito.bulkCreate(
-        { sector_nombre: "Rural", },
-        { sector_nombre: "Urbano", },
-    )
-} 
+Ambito.sync({ force: false })
+    .then(async () => {
+        const count = await Ambito.count();
+        if (count === 0) {
+            {
+                await Ambito.bulkCreate([
+                    { ambito_nombre: "Rural", },
+                    { ambito_nombre: "Urbano", }
+                ]);
+            }
+        }
+    });

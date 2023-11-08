@@ -20,10 +20,6 @@ export const Localidad = sequelize.define('Localidad', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    nombre_depar:{
-        type: DataTypes.STRING,
-        allowNull: false
-    }
 }, {
     timestamps: false,
     paranoid: false,

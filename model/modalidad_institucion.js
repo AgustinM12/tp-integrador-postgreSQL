@@ -23,6 +23,6 @@ export const Modalidad_institucion = sequelize.define('Modalidad_institucion', {
 });
 
 // Sincronizar los modelos con la base de datos (esto creará las tablas si no existen)
-Modalidad_institucion.sync({ force: true }).then(() => {
+Modalidad_institucion.sync({ force: false }).then(() => {
     console.log('Tabla de Modalidad_institucion creada')
 })

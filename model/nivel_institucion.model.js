@@ -23,6 +23,6 @@ export const Nivel_institucion = sequelize.define('Nivel_institucion', {
 });
 
 // Sincronizar los modelos con la base de datos (esto creará las tablas si no existen)
-Nivel_institucion.sync({ force: true }).then(() => {
+Nivel_institucion.sync({ force: false }).then(() => {
     console.log('Tabla de Nivel_institucion creada')
 })

@@ -19,13 +19,15 @@ export const Sector = sequelize.define('Sector', {
 });
 
 // Sincronizar los modelos con la base de datos (esto creará las tablas si no existen)
-Sector.sync({ force: false }).then(() => {
-    console.log('Tabla de sector creada')
-})
-
-export async function sectorF() {
-    Sector.bulkCreate(
-        { sector_nombre: "Estatal", },
-        { sector_nombre: "Privado", },
-    )
-} 
+Sector.sync({ force: false })
+    .then(async () => {
+        const count = await Sector.count();
+        if (count === 0) {
+            {
+                await Sector.bulkCreate([
+                    { sector_nombre: "Estatal", },
+                    { sector_nombre: "Privado", }
+                ]);
+            }
+        }
+    });

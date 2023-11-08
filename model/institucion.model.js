@@ -13,11 +13,11 @@ export  const Institucion = sequelize.define('Institucion', {
     },
     telefono: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     mail: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     sector_id: {
         type: DataTypes.INTEGER,
