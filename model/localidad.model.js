@@ -13,8 +13,8 @@ export const Localidad = sequelize.define('Localidad', {
         allowNull: false,
     },
     cod_postal:{
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: true
     },
     departamento_id:{
         type: DataTypes.INTEGER,

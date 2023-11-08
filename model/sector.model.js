@@ -26,7 +26,8 @@ Sector.sync({ force: false })
             {
                 await Sector.bulkCreate([
                     { sector_nombre: "Estatal", },
-                    { sector_nombre: "Privado", }
+                    { sector_nombre: "Privado", } ,
+                    { sector_nombre: "Social/cooperativa", },
                 ]);
             }
         }

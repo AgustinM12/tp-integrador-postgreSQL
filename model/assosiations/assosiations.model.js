@@ -1,14 +1,14 @@
 import { Localidad } from "../localidad.model.js";
 import { Institucion } from "../institucion.model.js";
 import { Departamento, } from "../departamento.model.js";
-import { DomicilioInst } from "../domicilio.model.js";
+// import { DomicilioInst } from "../domicilio.model.js";
 import { Sector, } from "../sector.model.js";
 import { Modalidad } from "../modalidad.model.js";
 import { Ambito, } from "../ambito.model.js";
 import { NivelEducativo } from "../nivelEducativo.model.js";
 // import { Modalidad_institucion } from "../modalidad_institucion.js";
 import { Nivel_institucion } from "../nivel_institucion.model.js";
-import { Domicilio_institucion } from "../domicilio_institucion.model.js";
+// import { Domicilio_institucion } from "../domicilio_institucion.model.js";
 import sequelize from "../../db.js";
 
 Institucion.belongsTo(Sector, { foreignKey: "sector_id", as: "sector" })
@@ -40,12 +40,12 @@ Institucion.belongsToMany(NivelEducativo, {
     as: "NivelInstitucion"
 })
 
-Institucion.belongsToMany(DomicilioInst, {
-    through: "Domicilio_institucion",
-    foreignKey: "institucion_id",
-    otherKey: "domicilio_id",
-    as: "InstitucionDomicilio"
-})
+// Institucion.belongsToMany(DomicilioInst, {
+//     through: "Domicilio_institucion",
+//     foreignKey: "institucion_id",
+//     otherKey: "domicilio_id",
+//     as: "InstitucionDomicilio"
+// })
 
 async function nivelF() {
     const count = await NivelEducativo.count();
@@ -82,5 +82,4 @@ async function nivelF() {
 }
 
 //comentar esto, ejecutar una vez y luego descomentar 
-
 nivelF()

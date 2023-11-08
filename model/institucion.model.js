@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../db.js";
 // Definir el modelo para la tabla contacto
-export  const Institucion = sequelize.define('Institucion', {
+export const Institucion = sequelize.define('Institucion', {
     id_institucion: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -16,6 +16,10 @@ export  const Institucion = sequelize.define('Institucion', {
         allowNull: true,
     },
     mail: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    domicilio: {
         type: DataTypes.STRING,
         allowNull: true,
     },
